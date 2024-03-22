@@ -1,0 +1,44 @@
+@import url('https://fonts.googleapis.com/css2?family=Alata&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,300;1,300&display=swap');
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+* {
+  font-family: "Josefin Sans", sans-serif; /* Define primary font first */
+}
+
+body {
+  font-family: "Alata", sans-serif; /* Use Alata as the fallback font */
+  font-weight: 400; /* Font weight for normal text */
+  font-style: normal; /* Font style for normal text */
+}
+img{
+  background-size:cover;
+}
+.nav-link {
+  color: #d1d5db; /* Set default text color */
+  transition: color 0.2s ease-in-out; /* Smooth transition effect */
+  position: relative; /* Required for positioning the underline */
+}
+
+.nav-link:hover {
+  color: #fff; /* Change text color on hover */
+}
+
+.nav-link::after {
+  content: ''; /* Required for the underline */
+  position: absolute; /* Position the underline */
+  bottom: -3px; /* Adjust this value to change the distance between the text and the underline */
+  left: 0; /* Align the underline with the text */
+  width: 100%; /* Make the underline full-width */
+  height: 2px; /* Set the height of the underline */
+  background-color: hsl(0, 0%, 41%); /* Set the color of the underline */
+  transition: width 0.2s ease-in-out; /* Smooth transition effect */
+  transform: scaleX(0); /* Initially hide the underline */
+  transform-origin: bottom left; /* Set the origin to bottom left for animation */
+}
+
+.nav-link:hover::after {
+  transform: scaleX(1); /* Show the underline on hover */
+}
